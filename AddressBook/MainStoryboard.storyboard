@@ -6,7 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Address Book View Controller - Root View Controller-->
+        <!--Address Book View Controller - Address Book-->
         <scene sceneID="21b-1B-ygG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TnO-lD-BHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,10 +36,90 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="3m5-sB-esL"/>
+                    <navigationItem key="navigationItem" title="Address Book" id="3m5-sB-esL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="w84-e3-KiN">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="tQd-DM-tce" id="p47-5y-OgI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DTM-hO-gZC">
+                            <connections>
+                                <segue destination="Lx4-OV-zkT" kind="push" id="JjO-yK-MVH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="497" y="117"/>
+            <point key="canvasLocation" x="358" y="128"/>
+        </scene>
+        <!--Contact Detail View Controller - New Contact-->
+        <scene sceneID="l6q-BM-oJw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDS-3x-BBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="contactDetail" id="Lx4-OV-zkT" customClass="ContactDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RzA-Ie-SJo">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Identification" id="IvH-RP-4ad">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EHN-pG-Lds">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" id="IN3-jc-TF8">
+                                                    <rect key="frame" x="6" y="0.0" width="289" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OeM-KU-8Lq">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" id="Grf-7I-kZr">
+                                                    <rect key="frame" x="6" y="0.0" width="289" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Lx4-OV-zkT" id="CfD-AD-dPz"/>
+                            <outlet property="delegate" destination="Lx4-OV-zkT" id="HPX-g6-xET"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="New Contact" id="q2z-Nj-HTV">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="I5i-jp-gzb">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="Lx4-OV-zkT" id="QIf-X4-TSH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="IN3-jc-TF8" id="bwW-Yy-mwe"/>
+                        <outlet property="lastNameTextField" destination="Grf-7I-kZr" id="BuW-3X-CGZ"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="820" y="252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tae-om-P2j">
@@ -57,11 +137,6 @@
             <point key="canvasLocation" x="-37" y="117"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddressBookViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddressBookViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

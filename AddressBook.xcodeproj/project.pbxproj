@@ -19,6 +19,7 @@
 		9FEBC8D615B4DE9C0042DB10 /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */; };
 		9FEBC8D815B4DEAA0042DB10 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */; };
 		9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */; };
+		9FEBC8DE15B4F91C0042DB10 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9FEBC8D915B4E5050042DB10 /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
 		9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectManager.m; sourceTree = "<group>"; };
+		9FEBC8DC15B4F91C0042DB10 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
+		9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */,
 				9FEBC8D915B4E5050042DB10 /* ObjectManager.h */,
 				9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */,
+				9FEBC8DC15B4F91C0042DB10 /* ContactDetailViewController.h */,
+				9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				9FEBC8D315B4DDDD0042DB10 /* Contact.m in Sources */,
 				9FEBC8D615B4DE9C0042DB10 /* AddressBookViewController.m in Sources */,
 				9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */,
+				9FEBC8DE15B4F91C0042DB10 /* ContactDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +258,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -263,6 +270,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

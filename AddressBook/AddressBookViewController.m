@@ -7,11 +7,15 @@
 //
 
 #import "AddressBookViewController.h"
+#import "ContactDetailViewController.h"
 #import "Contact.h"
 
-@interface AddressBookViewController () 
+@interface AddressBookViewController () {
+    BOOL _editing;
+}
 
-@property (nonatomic, strong) NSArray* contactsArray;
+@property (nonatomic, strong) NSMutableArray* contactsArray;
+- (IBAction)editButtonTapped:(id)sender;
 
 @end
 
@@ -19,14 +23,19 @@
 
 @synthesize contactsArray = _contactsArray;
 
-- (NSArray*)contactsArray
-{
-    if (!_contactsArray) {
-        _contactsArray = [[AddressBook sharedInstance] allContacts];
-    }
-    return _contactsArray;
-}
+//- (NSArray*)contactsArray
+//{
+//    if (!_contactsArray) {
+//        _contactsArray = [[AddressBook sharedInstance] allContacts];
+//    }
+//    return _contactsArray;
+//}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.contactsArray = [[[AddressBook sharedInstance] allContacts] mutableCopy];
+    [self.tableView reloadData];
+}
 
 #pragma mark - UITableViewDataSource methods
 
@@ -52,4 +61,28 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Contact* contact = [self.contactsArray objectAtIndex:indexPath.row];
+    ContactDetailViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"contactDetail"];
+    [controller setContact:contact];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Contact* contact = [self.contactsArray objectAtIndex:indexPath.row];
+    [[AddressBook sharedInstance] deleteContact:contact];
+    [self.contactsArray removeObject:contact];
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - Actions
+
+- (IBAction)editButtonTapped:(id)sender {
+    _editing = !_editing;
+    [self.tableView setEditing:_editing];
+}
 @end

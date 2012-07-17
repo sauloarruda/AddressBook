@@ -18,6 +18,8 @@
 #pragma mark - Transient properties
 @property (nonatomic, readonly) NSString* fullName;
 
+- (void)save;
+
 @end
 
 @interface AddressBook : NSObject
@@ -26,5 +28,6 @@
 
 - (NSArray*)allContacts;
 - (Contact*)newContact;
+- (void)deleteContact:(Contact*)contact;
 
 @end

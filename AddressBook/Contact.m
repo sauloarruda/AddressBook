@@ -19,6 +19,11 @@
     return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
+- (void)save
+{
+    [[ObjectManager sharedInstance] saveContext];
+}
+
 @end
 
 static AddressBook* __sharedInstance;
@@ -35,6 +40,8 @@ static AddressBook* __sharedInstance;
 {
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Contact class])];
     NSManagedObjectContext* context = [ObjectManager sharedInstance].managedObjectContext;
+    NSSortDescriptor* orderByName = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:orderByName]];
     
     NSError* error;
     NSArray* contactsArray = [context executeFetchRequest:fetchRequest error:&error];
@@ -50,6 +57,13 @@ static AddressBook* __sharedInstance;
     NSManagedObjectContext* context = [ObjectManager sharedInstance].managedObjectContext;
     Contact *contact = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Contact class]) inManagedObjectContext:context];
     return contact;
+}
+
+- (void)deleteContact:(Contact*)contact
+{
+    NSManagedObjectContext* context = [ObjectManager sharedInstance].managedObjectContext;
+    [context deleteObject:contact];
+    [[ObjectManager sharedInstance] saveContext];
 }
 
 @end
