@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  AddressBookViewController.h
 //  AddressBook
 //
 //  Created by Saulo Arruda Coelho on 7/16/12.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface AddressBookViewController : UITableViewController
 
 @end

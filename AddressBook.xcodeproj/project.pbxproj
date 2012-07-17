@@ -15,6 +15,10 @@
 		9FEBC8C415B4DCB30042DB10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8C315B4DCB30042DB10 /* main.m */; };
 		9FEBC8C815B4DCB30042DB10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8C715B4DCB30042DB10 /* AppDelegate.m */; };
 		9FEBC8CB15B4DCB30042DB10 /* AddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8C915B4DCB30042DB10 /* AddressBook.xcdatamodeld */; };
+		9FEBC8D315B4DDDD0042DB10 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D215B4DDDD0042DB10 /* Contact.m */; };
+		9FEBC8D615B4DE9C0042DB10 /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */; };
+		9FEBC8D815B4DEAA0042DB10 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */; };
+		9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +27,20 @@
 		9FEBC8B715B4DCB30042DB10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9FEBC8B915B4DCB30042DB10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9FEBC8BB15B4DCB30042DB10 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		9FEBC8BF15B4DCB30042DB10 /* AddressBook-Info.plist */ = {isa = PBXFileReference; path = "AddressBook-Info.plist"; sourceTree = "<group>"; };
+		9FEBC8BF15B4DCB30042DB10 /* AddressBook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AddressBook-Info.plist"; sourceTree = "<group>"; };
 		9FEBC8C115B4DCB30042DB10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9FEBC8C315B4DCB30042DB10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9FEBC8C515B4DCB30042DB10 /* AddressBook-Prefix.pch */ = {isa = PBXFileReference; path = "AddressBook-Prefix.pch"; sourceTree = "<group>"; };
-		9FEBC8C615B4DCB30042DB10 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		9FEBC8C515B4DCB30042DB10 /* AddressBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AddressBook-Prefix.pch"; sourceTree = "<group>"; };
+		9FEBC8C615B4DCB30042DB10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FEBC8C715B4DCB30042DB10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9FEBC8CA15B4DCB30042DB10 /* AddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AddressBook.xcdatamodel; sourceTree = "<group>"; };
+		9FEBC8D115B4DDDD0042DB10 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		9FEBC8D215B4DDDD0042DB10 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		9FEBC8D415B4DE9C0042DB10 /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
+		9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
+		9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9FEBC8D915B4E5050042DB10 /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
+		9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +92,14 @@
 				9FEBC8C615B4DCB30042DB10 /* AppDelegate.h */,
 				9FEBC8C715B4DCB30042DB10 /* AppDelegate.m */,
 				9FEBC8C915B4DCB30042DB10 /* AddressBook.xcdatamodeld */,
+				9FEBC8D115B4DDDD0042DB10 /* Contact.h */,
+				9FEBC8D215B4DDDD0042DB10 /* Contact.m */,
 				9FEBC8BE15B4DCB30042DB10 /* Supporting Files */,
+				9FEBC8D415B4DE9C0042DB10 /* AddressBookViewController.h */,
+				9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */,
+				9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */,
+				9FEBC8D915B4E5050042DB10 /* ObjectManager.h */,
+				9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -149,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FEBC8C215B4DCB30042DB10 /* InfoPlist.strings in Resources */,
+				9FEBC8D815B4DEAA0042DB10 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +181,9 @@
 				9FEBC8C415B4DCB30042DB10 /* main.m in Sources */,
 				9FEBC8C815B4DCB30042DB10 /* AppDelegate.m in Sources */,
 				9FEBC8CB15B4DCB30042DB10 /* AddressBook.xcdatamodeld in Sources */,
+				9FEBC8D315B4DDDD0042DB10 /* Contact.m in Sources */,
+				9FEBC8D615B4DE9C0042DB10 /* AddressBookViewController.m in Sources */,
+				9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
