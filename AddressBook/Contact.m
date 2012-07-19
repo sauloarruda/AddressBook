@@ -13,6 +13,7 @@
 
 @dynamic firstName;
 @dynamic lastName;
+@dynamic city;
 
 - (NSString*)fullName
 {

@@ -21,6 +21,8 @@
 		9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */; };
 		9FEBC8DE15B4F91C0042DB10 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */; };
 		9FF1F05015B782DC00543E59 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF1F04F15B782DC00543E59 /* MainStoryboard_iPad.storyboard */; };
+		9FF1F05415B790D300543E59 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1F05315B790D300543E59 /* City.m */; };
+		9FF1F05715B792C900543E59 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1F05615B792C800543E59 /* CityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,11 @@
 		9FEBC8DC15B4F91C0042DB10 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
 		9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
 		9FF1F04F15B782DC00543E59 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		9FF1F05115B78E2900543E59 /* AddressBook 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AddressBook 1.1.xcdatamodel"; sourceTree = "<group>"; };
+		9FF1F05215B790D300543E59 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		9FF1F05315B790D300543E59 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		9FF1F05515B792C800543E59 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		9FF1F05615B792C800543E59 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +115,10 @@
 				9FEBC8D915B4E5050042DB10 /* ObjectManager.h */,
 				9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */,
 				9FEBC8BE15B4DCB30042DB10 /* Supporting Files */,
+				9FF1F05215B790D300543E59 /* City.h */,
+				9FF1F05315B790D300543E59 /* City.m */,
+				9FF1F05515B792C800543E59 /* CityViewController.h */,
+				9FF1F05615B792C800543E59 /* CityViewController.m */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -194,6 +205,8 @@
 				9FEBC8D615B4DE9C0042DB10 /* AddressBookViewController.m in Sources */,
 				9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */,
 				9FEBC8DE15B4F91C0042DB10 /* ContactDetailViewController.m in Sources */,
+				9FF1F05415B790D300543E59 /* City.m in Sources */,
+				9FF1F05715B792C900543E59 /* CityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,9 +322,10 @@
 		9FEBC8C915B4DCB30042DB10 /* AddressBook.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9FF1F05115B78E2900543E59 /* AddressBook 1.1.xcdatamodel */,
 				9FEBC8CA15B4DCB30042DB10 /* AddressBook.xcdatamodel */,
 			);
-			currentVersion = 9FEBC8CA15B4DCB30042DB10 /* AddressBook.xcdatamodel */;
+			currentVersion = 9FF1F05115B78E2900543E59 /* AddressBook 1.1.xcdatamodel */;
 			path = AddressBook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

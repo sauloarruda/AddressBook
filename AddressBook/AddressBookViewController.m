@@ -12,6 +12,7 @@
 
 @interface AddressBookViewController () {
     BOOL _editing;
+    Contact* _contactToEdit;
 }
 
 @property (nonatomic, strong) NSMutableArray* contactsArray;
@@ -43,9 +44,16 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+{    
+    // Sempre desempilha todos os VCs do navigation do detalhe
     UINavigationController* detailNavigationController = [self.navigationController.splitViewController.viewControllers lastObject];
     [detailNavigationController popToRootViewControllerAnimated:NO];
+
+    if ([segue.identifier isEqualToString:@"editContact"]) {
+        ContactDetailViewController* controller = segue.destinationViewController;
+        [controller setContact:_contactToEdit];
+        _contactToEdit = nil;
+    }
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -76,15 +84,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Contact* contact = [self.contactsArray objectAtIndex:indexPath.row];
-    ContactDetailViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"contactDetail"];
-    [controller setContact:contact];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UINavigationController* detailNavigationController = (UINavigationController*)[self.splitViewController.viewControllers lastObject];
-        [detailNavigationController popToRootViewControllerAnimated:NO];
-        [detailNavigationController pushViewController:controller animated:YES];
-    } else 
-        [self.navigationController pushViewController:controller animated:YES];
+    _contactToEdit = [self.contactsArray objectAtIndex:indexPath.row];
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//        UINavigationController* detailNavigationController = (UINavigationController*)[self.splitViewController.viewControllers lastObject];
+//        [detailNavigationController popToRootViewControllerAnimated:NO];
+//        [detailNavigationController pushViewController:controller animated:YES];
+//    } else 
+//        [self.navigationController pushViewController:controller animated:YES];
+    [self performSegueWithIdentifier:@"editContact" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

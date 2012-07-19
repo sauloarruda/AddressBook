@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import "City.h"
 
 @interface Contact : NSManagedObject
 
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) City * city;
 
 #pragma mark - Transient properties
 @property (nonatomic, readonly) NSString* fullName;

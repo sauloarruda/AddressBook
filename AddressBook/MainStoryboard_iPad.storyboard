@@ -43,10 +43,13 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="jMk-7j-l1V">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d7n-jW-cwo">
                             <connections>
-                                <segue destination="hUx-82-DQU" kind="push" splitViewControllerTargetIndex="1" id="T2X-zL-djD"/>
+                                <segue destination="hUx-82-DQU" kind="push" identifier="addContact" splitViewControllerTargetIndex="1" id="T2X-zL-djD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="hUx-82-DQU" kind="push" identifier="editContact" splitViewControllerTargetIndex="1" id="xfW-sn-rI2"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="986" y="-758"/>
@@ -96,13 +99,30 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bAY-yk-pnh">
-                                        <rect key="frame" x="0.0" y="99" width="768" height="45"/>
+                                        <rect key="frame" x="0.0" y="99" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="45" y="0.0" width="678" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" id="a7Q-HZ-whY">
+                                                    <rect key="frame" x="9" y="6" width="661" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="s3x-wW-8HQ">
+                                        <rect key="frame" x="0.0" y="143" width="768" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="0.0" width="658" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" id="t1W-PZ-3M2">
                                                     <rect key="frame" x="9" y="6" width="661" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -128,12 +148,72 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cityTextField" destination="t1W-PZ-3M2" id="wtT-i3-vin"/>
                         <outlet property="firstNameTextField" destination="qDU-B7-8iC" id="ZfS-xp-E6P"/>
                         <outlet property="lastNameTextField" destination="a7Q-HZ-whY" id="hR1-QO-MM9"/>
+                        <segue destination="WdI-sA-5iN" kind="push" identifier="selectCity" id="W4h-Qy-8QJ"/>
                     </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1188" y="305"/>
+        </scene>
+        <!--City View Controller - Select City-->
+        <scene sceneID="Cj0-g1-I6a">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebh-hJ-TmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="cityList" id="WdI-sA-5iN" customClass="CityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lhX-pT-3h0">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" id="Ngq-pv-gzk">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="tZN-Dg-QcZ">
+                                <rect key="frame" x="0.0" y="44" width="768" height="916"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" textLabel="Iho-JW-s8U" detailTextLabel="ZeB-gI-J4D" style="IBUITableViewCellStyleValue1" id="I1D-N1-QBR">
+                                        <rect key="frame" x="0.0" y="54" width="768" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iho-JW-s8U">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZeB-gI-J4D">
+                                                    <rect key="frame" x="624" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WdI-sA-5iN" id="1f6-i6-3Kn"/>
+                                    <outlet property="delegate" destination="WdI-sA-5iN" id="4s0-qi-V5F"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select City" id="Yce-yx-hbX"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2045" y="305"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="dfb-oO-Cqz">
@@ -165,28 +245,12 @@
             <point key="canvasLocation" x="216" y="341"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddressBookViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddressBookViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="editButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="ContactDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonTapped:"/>
-                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="I4C-XR-MLc"/>
+        <segue reference="xfW-sn-rI2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Contact.h"
+#import "CityViewController.h"
 
-@interface ContactDetailViewController : UITableViewController<UISplitViewControllerDelegate>
+@interface ContactDetailViewController : UITableViewController<UISplitViewControllerDelegate, CityViewControllerDelegate>
 
 @property (nonatomic, weak) Contact* contact;
 
