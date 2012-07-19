@@ -10,7 +10,7 @@
 #import "Contact.h"
 #import "CityViewController.h"
 
-@interface ContactDetailViewController : UITableViewController<UISplitViewControllerDelegate, CityViewControllerDelegate>
+@interface ContactDetailViewController : UITableViewController<UISplitViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CityViewControllerDelegate>
 
 @property (nonatomic, weak) Contact* contact;
 

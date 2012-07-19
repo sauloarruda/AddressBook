@@ -9,6 +9,7 @@
 #import "ContactDetailViewController.h"
 
 #define kCityRowIndex 2
+#define kGenderRowIndex 3
 
 @interface ContactDetailViewController ()
 
@@ -16,14 +17,26 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cityTextField;
 - (IBAction)doneButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *genderTextField;
+@property (weak, nonatomic) IBOutlet UIPickerView *genderPickerView;
+@property (strong, nonatomic) NSArray* genderArray;
 
 @end
 
 @implementation ContactDetailViewController
+@synthesize genderTextField;
+@synthesize genderPickerView;
 @synthesize cityTextField;
 @synthesize firstNameTextField;
 @synthesize lastNameTextField;
 @synthesize contact;
+@synthesize genderArray = _genderArray;
+
+- (NSArray*)genderArray
+{
+    if (!_genderArray) _genderArray = [NSArray arrayWithObjects:@"-", @"Male", @"Female", nil];
+    return _genderArray;
+}
 
 - (void)viewDidLoad
 {
@@ -33,12 +46,14 @@
         [self.cityTextField setText:self.contact.city.name];
     } else {
         self.contact = [[AddressBook sharedInstance] newContact];
-    }
+    }    
 }
 - (void)viewDidUnload {
     [self setFirstNameTextField:nil];
     [self setLastNameTextField:nil];
     [self setCityTextField:nil];
+    [self setGenderTextField:nil];
+    [self setGenderPickerView:nil];
     [super viewDidUnload];
 }
 
@@ -76,14 +91,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.firstNameTextField resignFirstResponder];
+    [self.lastNameTextField resignFirstResponder];
+    [self.genderPickerView setHidden:YES];
     if (indexPath.row == kCityRowIndex) {
 //        CityViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"cityList"];
 //        [self.navigationController pushViewController:controller animated:YES];
         [self performSegueWithIdentifier:@"selectCity" sender:self];
     }
+    else if (indexPath.row == kGenderRowIndex) {
+        [self.genderPickerView setHidden:NO];
+    }
 }
 
-#pragma mark = CityViewControllerDelegate methods
+#pragma mark - UIPickerViewDataSource methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.genderArray count];
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [self.genderArray objectAtIndex:row];
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    [self.genderTextField setText:[self.genderArray objectAtIndex:row]];
+    [self.genderPickerView setHidden:YES];
+}
+
+#pragma mark - CityViewControllerDelegate methods
 
 - (void)didSelectCity:(City *)city
 {

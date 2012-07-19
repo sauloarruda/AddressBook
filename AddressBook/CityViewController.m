@@ -9,6 +9,11 @@
 #import "CityViewController.h"
 
 @interface CityViewController ()
+{
+    NSArray* _unfilteredCitiesArray;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray* citiesArray;
 
@@ -18,11 +23,13 @@
 
 @synthesize delegate = _delegate;
 @synthesize city = _city;
+@synthesize tableView = _tableView;
 @synthesize citiesArray = _citiesArray;
 
 - (void)viewDidLoad
 {
     self.citiesArray = [City allCities];
+    _unfilteredCitiesArray = self.citiesArray;
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -61,4 +68,33 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - UISearchBarDelegate
+
+- (void)performSearch:(NSString*)searchText
+{
+    if ([searchText length] >= 2) {
+        NSString* queryText = searchText;
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@", queryText];
+        self.citiesArray = [_unfilteredCitiesArray filteredArrayUsingPredicate:predicate];
+    } else {
+        self.citiesArray = _unfilteredCitiesArray;        
+    }
+    [self.tableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self performSearch:searchText];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    [self performSearch:searchBar.text];
+}
+
+- (void)viewDidUnload {
+    [self setTableView:nil];
+    [super viewDidUnload];
+}
 @end

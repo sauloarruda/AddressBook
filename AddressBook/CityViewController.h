@@ -15,7 +15,7 @@
 
 @end
 
-@interface CityViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface CityViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) id<CityViewControllerDelegate> delegate;
 @property (nonatomic, weak) City* city;
