@@ -17,9 +17,10 @@
 		9FEBC8CB15B4DCB30042DB10 /* AddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8C915B4DCB30042DB10 /* AddressBook.xcdatamodeld */; };
 		9FEBC8D315B4DDDD0042DB10 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D215B4DDDD0042DB10 /* Contact.m */; };
 		9FEBC8D615B4DE9C0042DB10 /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */; };
-		9FEBC8D815B4DEAA0042DB10 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */; };
+		9FEBC8D815B4DEAA0042DB10 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FEBC8D715B4DEAA0042DB10 /* MainStoryboard_iPhone.storyboard */; };
 		9FEBC8DB15B4E5050042DB10 /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */; };
 		9FEBC8DE15B4F91C0042DB10 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */; };
+		9FF1F05015B782DC00543E59 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF1F04F15B782DC00543E59 /* MainStoryboard_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +40,12 @@
 		9FEBC8D215B4DDDD0042DB10 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		9FEBC8D415B4DE9C0042DB10 /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
 		9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
-		9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9FEBC8D715B4DEAA0042DB10 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		9FEBC8D915B4E5050042DB10 /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
 		9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectManager.m; sourceTree = "<group>"; };
 		9FEBC8DC15B4F91C0042DB10 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
 		9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
+		9FF1F04F15B782DC00543E59 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,19 +94,20 @@
 		9FEBC8BD15B4DCB30042DB10 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				9FEBC8C615B4DCB30042DB10 /* AppDelegate.h */,
-				9FEBC8C715B4DCB30042DB10 /* AppDelegate.m */,
 				9FEBC8C915B4DCB30042DB10 /* AddressBook.xcdatamodeld */,
-				9FEBC8D115B4DDDD0042DB10 /* Contact.h */,
-				9FEBC8D215B4DDDD0042DB10 /* Contact.m */,
-				9FEBC8BE15B4DCB30042DB10 /* Supporting Files */,
 				9FEBC8D415B4DE9C0042DB10 /* AddressBookViewController.h */,
 				9FEBC8D515B4DE9C0042DB10 /* AddressBookViewController.m */,
-				9FEBC8D715B4DEAA0042DB10 /* MainStoryboard.storyboard */,
-				9FEBC8D915B4E5050042DB10 /* ObjectManager.h */,
-				9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */,
+				9FEBC8C615B4DCB30042DB10 /* AppDelegate.h */,
+				9FEBC8C715B4DCB30042DB10 /* AppDelegate.m */,
+				9FEBC8D115B4DDDD0042DB10 /* Contact.h */,
+				9FEBC8D215B4DDDD0042DB10 /* Contact.m */,
 				9FEBC8DC15B4F91C0042DB10 /* ContactDetailViewController.h */,
 				9FEBC8DD15B4F91C0042DB10 /* ContactDetailViewController.m */,
+				9FF1F04F15B782DC00543E59 /* MainStoryboard_iPad.storyboard */,
+				9FEBC8D715B4DEAA0042DB10 /* MainStoryboard_iPhone.storyboard */,
+				9FEBC8D915B4E5050042DB10 /* ObjectManager.h */,
+				9FEBC8DA15B4E5050042DB10 /* ObjectManager.m */,
+				9FEBC8BE15B4DCB30042DB10 /* Supporting Files */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -172,7 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FEBC8C215B4DCB30042DB10 /* InfoPlist.strings in Resources */,
-				9FEBC8D815B4DEAA0042DB10 /* MainStoryboard.storyboard in Resources */,
+				9FEBC8D815B4DEAA0042DB10 /* MainStoryboard_iPhone.storyboard in Resources */,
+				9FF1F05015B782DC00543E59 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +262,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -270,8 +275,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -295,6 +301,7 @@
 				9FEBC8D015B4DCB30042DB10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

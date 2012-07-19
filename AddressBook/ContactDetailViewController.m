@@ -34,6 +34,11 @@
     [super viewDidUnload];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad);
+}
+
 - (IBAction)doneButtonTapped:(id)sender {
     if (!self.contact)
         self.contact = [[AddressBook sharedInstance] newContact];
@@ -41,6 +46,13 @@
     [self.contact setLastName:self.lastNameTextField.text];
     [self.contact save];    
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UISplitViewDelegate methods
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
 }
 
 @end

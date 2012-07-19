@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Contact.h"
 
-@interface ContactDetailViewController : UITableViewController
+@interface ContactDetailViewController : UITableViewController<UISplitViewControllerDelegate>
 
 @property (nonatomic, weak) Contact* contact;
 

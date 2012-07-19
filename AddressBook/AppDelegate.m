@@ -15,6 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UISplitViewController* splitViewController = (UISplitViewController*)[self.window rootViewController];
+        UINavigationController* detailNavigationController = [splitViewController.viewControllers lastObject];
+        [splitViewController setDelegate:(id)detailNavigationController.topViewController];
+    }
     return YES;
 }
 

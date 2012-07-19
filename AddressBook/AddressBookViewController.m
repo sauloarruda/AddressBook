@@ -37,6 +37,17 @@
     [self.tableView reloadData];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UINavigationController* detailNavigationController = [self.navigationController.splitViewController.viewControllers lastObject];
+    [detailNavigationController popToRootViewControllerAnimated:NO];
+}
+
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -68,7 +79,12 @@
     Contact* contact = [self.contactsArray objectAtIndex:indexPath.row];
     ContactDetailViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"contactDetail"];
     [controller setContact:contact];
-    [self.navigationController pushViewController:controller animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UINavigationController* detailNavigationController = (UINavigationController*)[self.splitViewController.viewControllers lastObject];
+        [detailNavigationController popToRootViewControllerAnimated:NO];
+        [detailNavigationController pushViewController:controller animated:YES];
+    } else 
+        [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
